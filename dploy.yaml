@@ -1,12 +1,12 @@
 stage:
   scheme: sftp
-  host:
+  host: 52.79.192.73
   port: 22
   user: ubuntu
   path:
     local: build/
     remote: build/
-  exclude: [".DS_Store"]
+  exclude: ['.DS_Store']
   include:
     build/**/*: /
     build/.next/**/*: /

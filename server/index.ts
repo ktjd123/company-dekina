@@ -24,7 +24,7 @@ const MONGODB_URI = process.env.MONGODB_URI || `mongodb://localhost/${LOCAL_DB}`
 // const SESSION_KEY = "connect.sid";
 const SESSION_SECRET = 'jfoiesofj@#JIFSIOfsjieo@320923';
 const SESSION_DOMAIN = undefined;
-const PORT = process.env.NODE_ENV === 'development' ? 80 : 3000;
+const PORT = 80;
 
 app.prepare().then(async () => {
   // Parse application/x-www-form-urlencoded
