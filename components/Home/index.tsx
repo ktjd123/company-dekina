@@ -14,7 +14,7 @@ export default class Index extends Component<Props> {
       <div className={cx('background')}>
         <h1 className={cx('title')}>Dekina Inc.</h1>
         <h2 className={cx('description')}>세상을 더욱 가치있게</h2>
-        <a href="mailto:ceo@dekina.com" className={cx('contact')}>
+        <a href="mailto:contact@dekina.com" className={cx('contact')}>
           CONTACT
         </a>
       </div>
