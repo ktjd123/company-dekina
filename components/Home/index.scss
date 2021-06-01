@@ -6,6 +6,11 @@
   @include flex-column();
   justify-content: center;
 
+  .logo-img {
+    width: 500px;
+    margin-top: -20vh;
+  }
+
   h1 {
     font-size: 7rem;
 

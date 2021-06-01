@@ -38,39 +38,39 @@ app.prepare().then(async () => {
 
   // MongoDB
   // mongoose.set('debug', true);
-  mongoose.Promise = global.Promise;
-  await mongoose
-    .connect(MONGODB_URI, {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      autoIndex: true,
-      poolSize: 1000,
-    })
-    .catch(() => {
-      console.error('DB NOT CONNECTED');
-      process.exit();
-    });
+  // mongoose.Promise = global.Promise;
+  // await mongoose
+  //   .connect(MONGODB_URI, {
+  //     useUnifiedTopology: true,
+  //     useNewUrlParser: true,
+  //     useCreateIndex: true,
+  //     autoIndex: true,
+  //     poolSize: 1000,
+  //   })
+  //   .catch(() => {
+  //     console.error('DB NOT CONNECTED');
+  //     process.exit();
+  //   });
 
-  // Session
-  const MongoStore = connectMongo(session);
-  server.use(
-    session({
-      // key: SESSION_KEY,
-      secret: SESSION_SECRET,
-      resave: false,
-      saveUninitialized: false,
-      rolling: true,
-      cookie: {
-        maxAge: 365 * (24 * 60 * 60 * 1000),
-        domain: dev ? undefined : SESSION_DOMAIN,
-      },
-      store: new MongoStore({
-        mongooseConnection: mongoose.connection,
-        ttl: 365 * (24 * 60 * 60 * 1000),
-      }),
-    })
-  );
+  // // Session
+  // const MongoStore = connectMongo(session);
+  // server.use(
+  //   session({
+  //     // key: SESSION_KEY,
+  //     secret: SESSION_SECRET,
+  //     resave: false,
+  //     saveUninitialized: false,
+  //     rolling: true,
+  //     cookie: {
+  //       maxAge: 365 * (24 * 60 * 60 * 1000),
+  //       domain: dev ? undefined : SESSION_DOMAIN,
+  //     },
+  //     store: new MongoStore({
+  //       mongooseConnection: mongoose.connection,
+  //       ttl: 365 * (24 * 60 * 60 * 1000),
+  //     }),
+  //   })
+  // );
 
   // API routes
   server.use('/api', api);
