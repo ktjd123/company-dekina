@@ -6,8 +6,9 @@
   "scripts": {
     "d": "rm -rf build && cross-env NODE_ENV=development tsc-watch -p tsconfig.server.json --onSuccess \"node build/index.js\"",
     "p": "cross-env NODE_ENV=production node index.js",
-    "build": "rm -rf .next && rm -rf build && tsc -p tsconfig.server.json && next build && mv .next build/.next && cp package.json build && cp -r public build/public && dploy stage && yarn ssh",
+    "build": "rm -rf .next && rm -rf build && tsc -p tsconfig.server.json && next build && mv .next build/.next && cp package.json build && cp -r public build/public",
     "start": "cd build && NODE_ENV=production node index.js",
+    "deploy": "scp -r -i ~/Documents/cert/Dekina.pem build ubuntu@52.79.192.73:~/",
     "ssh": "ssh ubuntu@52.79.192.73 -i ~/Documents/cert/Dekina.pem"
   },
   "license": "ISC",

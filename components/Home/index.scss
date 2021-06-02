@@ -9,6 +9,10 @@
   .logo-img {
     width: 500px;
     margin-top: -20vh;
+
+    @include media('<medium') {
+      width: 50%;
+    }
   }
 
   h1 {
